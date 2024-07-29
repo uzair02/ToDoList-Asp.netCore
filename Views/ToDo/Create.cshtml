@@ -1,0 +1,36 @@
+﻿@model ToDoApp.Models.ToDo
+
+@{
+    ViewData["Title"] = "Add Work";
+}
+
+<div class="container">
+    <div class="form-container">
+        <h2 class="text-center mb-4">Create Todo Item</h2>
+
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Title</label>
+                <input asp-for="Title" class="form-control" placeholder="Enter task title" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DueDate" class="control-label">Due Date</label>
+                <input asp-for="DueDate" type="date" class="form-control" />
+                <span asp-validation-for="DueDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input asp-for="IsCompleted" type="checkbox" class="form-check-input" id="isCompleted" />
+                    <label class="form-check-label" for="isCompleted">
+                        Mark as Completed
+                    </label>
+                </div>
+                <span asp-validation-for="IsCompleted" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
